@@ -67,6 +67,24 @@
   ],
   "albume": [
     {
+      "titlu": "Portrete",
+      "titlu_en": "Portraits",
+      "categorie": "portret",
+      "coperta": "/img/46.jpg",
+      "poze": [
+        "/img/46.jpg",
+        "/img/47.jpg",
+        "/img/48.jpg",
+        "/img/49.jpg",
+        "/img/50.jpg",
+        "/img/51.jpg",
+        "/img/52.jpg",
+        "/img/53.jpg",
+        "/img/54.jpg",
+        "/img/55.jpg"
+      ]
+    },
+    {
       "titlu": "Portret în parc",
       "titlu_en": "Portrait in the park",
       "categorie": "portret",
