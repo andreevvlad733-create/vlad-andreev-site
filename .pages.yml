@@ -1,0 +1,68 @@
+# Panoul de administrare pentru Vlad (Pages CMS, https://app.pagescms.org).
+media:
+  input: img
+  output: /img
+  extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: site
+    label: Poze și albume
+    type: file
+    path: continut/site.json
+    format: json
+    fields:
+      - name: portofoliu
+        label: Portofoliu (pozele de pe prima pagină)
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "Poza {index}: {categorie}"
+        fields:
+          - name: imagine
+            label: Poza
+            type: image
+            required: true
+          - name: categorie
+            label: Categorie
+            type: select
+            required: true
+            options:
+              values:
+                - { name: portret, label: Portret }
+                - { name: moda, label: Modă și street }
+                - { name: nunta, label: Nuntă și cuplu }
+                - { name: evenimente, label: Evenimente }
+      - name: albume
+        label: Albume
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{titlu}"
+        fields:
+          - name: titlu
+            label: Titlul albumului (română)
+            type: string
+            required: true
+          - name: titlu_en
+            label: Titlul în engleză (opțional)
+            type: string
+          - name: categorie
+            label: Categorie
+            type: select
+            required: true
+            options:
+              values:
+                - { name: portret, label: Portret }
+                - { name: moda, label: Modă și street }
+                - { name: nunta, label: Nuntă și cuplu }
+                - { name: evenimente, label: Evenimente }
+          - name: coperta
+            label: Coperta (poza de pe prima pagină)
+            type: image
+          - name: poze
+            label: Pozele din album
+            type: image
+            options:
+              multiple: true

@@ -1,0 +1,59 @@
+# La fiecare salvare din panou (Pages CMS): micșorează pozele noi, apoi urcă site-ul pe găzduirea lui Vlad prin FTP.
+# Secrete (Settings → Secrets and variables → Actions): FTP_SERVER, FTP_USERNAME, FTP_PASSWORD.
+# Opțional, ca variabile (tab-ul Variables): FTP_DIR (implicit ./, adică folderul în care pornește contul de FTP)
+# și FTP_PROTOCOL (implicit ftps; ftp doar dacă găzduirea nu are FTPS).
+# Fără FTP_SERVER, pasul de urcare se sare: pozele se optimizează oricum.
+name: Optimizează pozele și publică
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+# Fiecare poză urcată din panou e un commit separat: rulările stau la coadă, iar ultima le prinde pe toate.
+concurrency:
+  group: publica
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  publica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FTP_SERVER: ${{ secrets.FTP_SERVER }}
+    steps:
+      # ramura la zi, nu commitul care a pornit rularea
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm install --no-save --no-package-lock sharp@0.33.5
+      - run: node unelte/poze.mjs
+      - name: Salvează pozele optimizate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add img img-mic
+          git diff --cached --quiet && exit 0
+          git commit -m "Poze optimizate automat"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          exit 1
+      - name: Urcă pe găzduire
+        if: ${{ env.FTP_SERVER != '' }}
+        uses: SamKirkland/FTP-Deploy-Action@110f9186c050f71550953127052e77650219c287 # v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          local-dir: ./
+          server-dir: ${{ vars.FTP_DIR || './' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
+            unelte/**
+            README.md
+            .pages.yml

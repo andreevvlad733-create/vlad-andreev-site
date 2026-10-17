@@ -1,0 +1,138 @@
+:root{--bg:#0d0d0d;--card:#161616;--line:#2a2a2a;--text:#f2efe9;--mute:#9a968f;--paper:#f2efe9;--ink:#0d0d0d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font:400 16px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:rgba(13,13,13,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;line-height:1}
+.logo svg{width:30px;height:24px}
+.logo b{font:700 17px "Libre Baskerville",serif;letter-spacing:.02em}
+.logo small{display:block;font-size:8.5px;letter-spacing:.32em;color:var(--mute);margin-top:4px}
+.links{display:flex;gap:28px;font-size:14px;color:var(--mute)}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--paper);color:var(--ink);font-weight:600;font-size:14px;padding:12px 20px;border-radius:999px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.book{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:13px 14px 13px 22px;border:1px solid rgba(242,239,233,.35);border-radius:999px;transition:background .3s,color .3s,border-color .3s}
+.book svg{width:26px;height:26px;padding:6px;border-radius:50%;background:var(--paper);color:var(--ink);transition:transform .3s}
+.book:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.nav-r{display:flex;align-items:center;gap:18px}
+.lang{display:flex;align-items:center;gap:4px;font-size:12px;letter-spacing:.12em;color:#5c5954}
+.lang button{background:none;border:0;color:var(--mute);font:600 12px Manrope,sans-serif;letter-spacing:.12em;cursor:pointer;padding:12px 4px}
+.lang button.on{color:var(--text)}
+.book:hover svg{background:var(--ink);color:var(--paper);transform:rotate(45deg)}
+
+/* hero */
+.hero{padding:40px 0 80px}
+.hero-card{display:grid;grid-template-columns:1fr 1.15fr;background:var(--card);border:1px solid var(--line);border-radius:28px;overflow:hidden;min-height:620px}
+.hero-text{padding:56px 48px;display:flex;flex-direction:column}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+h1{font:400 clamp(40px,5vw,66px)/1.08 "Libre Baskerville",serif;margin:22px 0 22px;letter-spacing:-.01em}
+.lead{color:var(--mute);max-width:420px}
+.hero-cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.tags{margin-top:auto;padding-top:48px;display:flex;flex-wrap:wrap;gap:8px 6px;max-width:440px}
+.tags a{border:1px solid #3a3a3a;border-radius:999px;padding:7px 15px;font-size:13px;color:#cfcbc4;transition:.2s}
+.tags a:nth-child(3n+1){transform:rotate(-6deg)}
+.tags a:nth-child(3n+2){transform:rotate(5deg)}
+.tags a:nth-child(4n){transform:rotate(-12deg)}
+.tags a:hover{background:var(--paper);color:var(--ink);transform:rotate(0)}
+.hero-img{position:relative;margin:14px;border-radius:20px;overflow:hidden}
+.hero-img>img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+
+/* sections */
+section{padding:80px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+h2{font:400 clamp(30px,3.6vw,46px)/1.15 "Libre Baskerville",serif}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{font:500 14px Manrope,sans-serif;color:var(--mute);background:none;border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer}
+.filters button.on{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.grid{columns:3 300px;column-gap:14px}
+.grid figure{break-inside:avoid;margin-bottom:14px;border-radius:14px;overflow:hidden;position:relative}
+.grid img{width:100%;transition:transform .6s}
+.grid figure:hover img{transform:scale(1.03)}
+.grid figure.hide{display:none}
+
+/* albums */
+.albums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.album{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.album img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.album div{padding:16px 18px}
+.album b{font-weight:600}
+.album span{display:block;font-size:13px;color:var(--mute)}
+
+/* services */
+.light{background:var(--paper);color:var(--ink)}
+.light .mute{color:#6b675f}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.pack{background:#fff;border-radius:22px;padding:36px;border:1px solid #e2ddd3}
+.pack h3{font:400 26px "Libre Baskerville",serif;margin-bottom:6px}
+.pack ul{list-style:none;margin:22px 0 28px}
+.pack li{padding:12px 0;border-top:1px solid #ece7de;display:flex;gap:12px}
+.pack li:before{content:"";flex:none;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.light .btn{background:var(--ink);color:var(--paper)}
+.voucher{margin-top:16px;border:1px dashed #b9b2a5;border-radius:16px;padding:18px 22px;font-size:15px}
+
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
+.about img{border-radius:22px;aspect-ratio:4/5;object-fit:cover;object-position:35% 50%}
+.about p{color:var(--mute);margin-top:18px;max-width:520px}
+
+/* instagram */
+.ig{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.ig img{aspect-ratio:1;object-fit:cover;border-radius:12px}
+
+/* contact */
+.contact{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:64px 48px;text-align:center}
+.contact p{color:var(--mute);margin:16px auto 30px;max-width:520px}
+.contact .hero-cta{justify-content:center}
+footer{padding:36px 0 44px;color:var(--mute);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:960px){
+  .links{display:none}
+  .hero-card,.svc,.about{grid-template-columns:1fr}
+  .hero-text{padding:36px 26px}
+  .hero-img{height:520px}
+  .albums{grid-template-columns:1fr 1fr}
+  .ig{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .book{padding:10px 10px 10px 16px;letter-spacing:.12em}
+  .nav-r{gap:8px}
+  .logo b{font-size:14px;white-space:nowrap}
+  .grid{columns:2;column-gap:10px}
+  .grid figure{margin-bottom:10px;border-radius:10px}
+  .hero{padding-top:20px}
+}
+@media (max-width:430px){
+  .book{padding:4px;border-color:transparent}
+  .book span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .book svg{width:36px;height:36px;padding:10px}
+  .hero-img{height:440px}
+  section{padding:56px 0}
+  .contact{padding:44px 22px}
+  .pack{padding:26px}
+}
+
+/* album + lightbox */
+.grid figure{cursor:zoom-in}
+.back{display:inline-flex;gap:8px;color:var(--mute);font-size:14px;margin-bottom:18px}
+.back:hover{color:var(--text)}
+.album-head{padding:48px 0 32px}
+.album-head p{color:var(--mute);margin-top:8px}
+.gol{color:var(--mute);padding:40px 0}
+dialog.lb{border:0;padding:0;background:rgba(8,8,8,.96);max-width:100vw;max-height:100vh;width:100vw;height:100vh;color:var(--text)}
+dialog.lb::backdrop{background:rgba(0,0,0,.9)}
+.lb img{width:100%;height:100%;object-fit:contain;padding:56px 64px}
+.lb button{position:absolute;background:rgba(242,239,233,.1);border:0;color:var(--text);width:48px;height:48px;border-radius:50%;font-size:22px;cursor:pointer}
+.lb button:hover{background:rgba(242,239,233,.25)}
+.lb .x{top:16px;right:16px}
+.lb .prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb .next{right:16px;top:50%;transform:translateY(-50%)}
+@media (max-width:560px){.lb img{padding:64px 8px}.lb .prev,.lb .next{top:auto;bottom:16px;transform:none}}

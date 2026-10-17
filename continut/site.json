@@ -1,0 +1,126 @@
+{
+  "portofoliu": [
+    {
+      "imagine": "/img/40.jpg",
+      "categorie": "moda"
+    },
+    {
+      "imagine": "/img/06.jpg",
+      "categorie": "portret"
+    },
+    {
+      "imagine": "/img/26.jpg",
+      "categorie": "nunta"
+    },
+    {
+      "imagine": "/img/10.jpg",
+      "categorie": "portret"
+    },
+    {
+      "imagine": "/img/33.jpg",
+      "categorie": "nunta"
+    },
+    {
+      "imagine": "/img/38.jpg",
+      "categorie": "moda"
+    },
+    {
+      "imagine": "/img/15.jpg",
+      "categorie": "portret"
+    },
+    {
+      "imagine": "/img/36.jpg",
+      "categorie": "nunta"
+    },
+    {
+      "imagine": "/img/07.jpg",
+      "categorie": "portret"
+    },
+    {
+      "imagine": "/img/42.jpg",
+      "categorie": "moda"
+    },
+    {
+      "imagine": "/img/31.jpg",
+      "categorie": "nunta"
+    },
+    {
+      "imagine": "/img/23.jpg",
+      "categorie": "portret"
+    },
+    {
+      "imagine": "/img/44.jpg",
+      "categorie": "moda"
+    },
+    {
+      "imagine": "/img/12.jpg",
+      "categorie": "portret"
+    },
+    {
+      "imagine": "/img/34.jpg",
+      "categorie": "nunta"
+    },
+    {
+      "imagine": "/img/19.jpg",
+      "categorie": "moda"
+    }
+  ],
+  "albume": [
+    {
+      "titlu": "Portret în parc",
+      "titlu_en": "Portrait in the park",
+      "categorie": "portret",
+      "coperta": "/img/08.jpg",
+      "poze": [
+        "/img/08.jpg",
+        "/img/09.jpg",
+        "/img/10.jpg",
+        "/img/12.jpg",
+        "/img/13.jpg",
+        "/img/07.jpg"
+      ]
+    },
+    {
+      "titlu": "Portret de iarnă",
+      "titlu_en": "Winter portrait",
+      "categorie": "portret",
+      "coperta": "/img/16.jpg",
+      "poze": [
+        "/img/16.jpg",
+        "/img/15.jpg",
+        "/img/17.jpg",
+        "/img/19.jpg",
+        "/img/20.jpg",
+        "/img/23.jpg"
+      ]
+    },
+    {
+      "titlu": "Nuntă",
+      "titlu_en": "Wedding",
+      "categorie": "nunta",
+      "coperta": "/img/28.jpg",
+      "poze": [
+        "/img/28.jpg",
+        "/img/26.jpg",
+        "/img/31.jpg",
+        "/img/33.jpg",
+        "/img/34.jpg",
+        "/img/35.jpg",
+        "/img/36.jpg"
+      ]
+    },
+    {
+      "titlu": "Street, alb-negru",
+      "titlu_en": "Street, black & white",
+      "categorie": "moda",
+      "coperta": "/img/45.jpg",
+      "poze": [
+        "/img/45.jpg",
+        "/img/38.jpg",
+        "/img/40.jpg",
+        "/img/42.jpg",
+        "/img/44.jpg"
+      ]
+    }
+  ]
+}
